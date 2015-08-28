@@ -1,14 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>qeyevent.js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>qeyevent.js || by lebbe</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="qeyevent.js"></script>
+    <script src="snippet.js"></script>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <div class="jumbotron">
+      <div class="container">
+	<h1>A simpler way of  binding those key events!</h1>
+	<p>Tie your key-events to the very keys you want to listen on. <code>$( selector ).qeydown( 'ctrl+s', handler );</code> is
+	much more readable than <code>$( selector ).keydown(function(e) { if(e.ctrlKey && e.which === 83) });</code>! </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+	<div class="col-md-12">
+	  <h2>What do you prefer?</h2>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-md-6">
+	  <div class="thumbnail">
+	    <div class="caption"><pre><code>$( 'body' ).keypress(function( e ){
+  if(!e.ctrlKey || !e.which === 83 ) return;
+  saveDocument();
+});
+	    </code></pre></div>
+	    </div>
+	</div>
+	<div class="col-md-6">
+	  <div class="thumbnail">
+	    <div class="caption"><pre><code>$( 'body' ).qeypress( 'ctrl+s', saveDocument );
+	    </code></pre></div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-md-12">
+	  <h2>Try it now</h2>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-md-12">
+	  <p>
+	    I used my very own jQuery plugin to attach <code>ctrl+s</code>, <code>alt+p</code> to event
+	    handlers in this very HTML document. Call me crazy.
+	  </p>
+	</div>
+      </div>
+    </div>
+
+    <div class="jumbotron" style="margin-bottom: 0px; margin-top: 30px;">
+      <div class="container">
+	<p>That is all, folks.</p>
+      </div>
+    </div>
   </body>
 </html>
