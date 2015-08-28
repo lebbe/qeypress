@@ -16,7 +16,7 @@
 
         var which = event.which;
 
-        if((which >= 48 && which <= 57) || (which >= 65 && which <= 90)) {
+        if((which >= 48 && which <= 57) || (which >= 65 && which <= 90) || (which >= 97 && which <= 122) ) {
             actualKeys += String.fromCharCode(which);
         }
 
